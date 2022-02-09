@@ -1,0 +1,14 @@
+.NeumorphDiv{
+    width: 100%;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.NeumorphDiv__NeumorphItem{
+    width: 10rem;
+    height: 10rem;
+    box-shadow: 1.8rem 1.8rem 3rem #d1d9e6, -1.8rem -1.8rem 3rem #fff;
+}
+

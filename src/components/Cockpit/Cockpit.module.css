@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+.cockpit__header{
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.cockpit__header > *{
+    padding: .5rem 0;
+}
+
+.cockpit__header__h1{
+    font-weight: 400;
+    font-size: 2.5rem;
+    color: #464040;
+}
+
+.cockpit__header__p{
+    font-weight: 200;
+    font-size: 3rem;
+    color: #655757;
+}
+
+

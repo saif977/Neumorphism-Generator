@@ -1,0 +1,7 @@
+.LightSourceContainer{
+    font-size: 2rem;
+}
+
+.Selected{
+    border:1px solid black;
+}

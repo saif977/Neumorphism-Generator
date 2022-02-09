@@ -1,0 +1,41 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box
+
+
+}
+.codeDisplay_container{
+   
+    color:black;
+    font-size: 7rem;
+    width: 30rem;
+    padding: 1rem;
+    border-radius: .5rem;
+    background-color: #ecf0f3;
+    box-shadow: -2px -2px 8px #fff, 2px 2px 8px #d1d9e6;
+}
+
+span{
+    display: block;
+}
+
+span::selection{
+    text-decoration: none;
+}
+
+.clipBoard{
+    padding: .2rem;
+}
+
+.clipBoard:hover{
+    cursor: pointer;
+}
+
+.clipContainer
+{
+    font-size: 3rem;
+    display: flex;
+    justify-content: right;
+}
+
