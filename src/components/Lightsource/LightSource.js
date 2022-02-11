@@ -1,12 +1,14 @@
 import React,{ useEffect, useLayoutEffect, useRef } from 'react';
 import classes from "./LightSource.module.css"
 
+import {Directions} from "../Direction";
+
 function LightSource({dir,selected,changeLightSource}) {
   const lightSource=useRef(null);
  
 
   useEffect(()=>{
-      if(lightSource&&lightSource.current&&dir==="topLeft")
+      if(lightSource&&lightSource.current&&dir===Directions.topLeft)
       {
           changeLightSource(lightSource.current);
           console.log(lightSource.current)
@@ -14,6 +16,7 @@ function LightSource({dir,selected,changeLightSource}) {
       }
       console.log(lightSource.current)
   },[])
+
   useLayoutEffect(()=>{
       if(selected!==null &&  selected===lightSource.current)
       lightSource.current.className=`${classes.Selected} ${classes.LightSourceContainer}`;

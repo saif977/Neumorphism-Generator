@@ -1,0 +1,9 @@
+.NeumorphTypeContainer{
+    display: flex;
+    font-size:3rem;
+    justify-content: space-evenly;
+}
+
+.NeumorphTypeContainer > *{ 
+    cursor: pointer;
+}

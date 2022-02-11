@@ -10,8 +10,11 @@ import Control from '../components/Control/Control';
 import CodeDisplay from '../components/CodeDisplay/CodeDisplay';
 import LightSource from '../components/Lightsource/LightSource';
 import  {Directions} from '../components/Direction';
+import {type} from "../components/Assets/Type"
+import {ChromePicker} from "react-color"
 
 import classes from './App.module.css';
+import NeuomorphType from '../components/NeumorphType/NeuomorphType';
 
 
  function App(){
@@ -23,8 +26,13 @@ import classes from './App.module.css';
   });
 
   const [selectedLightSource,setSelectedLightsource]=useState(null);
-  if(selectedLightSource!==null)
-  console.log(selectedLightSource,selectedLightSource.textContent)
+
+  if(!selectedLightSource!=null)
+  console.log(selectedLightSource)
+
+  const [neumorphType,setNeumorphType]=useState(type.flat);
+  const [color,setColor]=useState("#ECF0F3");
+  
   const changeHandler=(e,changeFor)=>{
    // console.log(e);
     const value=e.target.value;
@@ -55,9 +63,12 @@ import classes from './App.module.css';
   //   return true;
   // }
 
+  const style={
+    backgroundColor:color
+  }
   
      return (
-       <div className={classes.App}>
+       <div className={classes.App} style={style}>
          <Cockpit></Cockpit>
          <main className={classes.App__main}>
            <div className={`${classes.App__main__flexContainer} ${classes.flexContainer}` }>
@@ -72,6 +83,8 @@ import classes from './App.module.css';
                             blur={state.blur}
                             initialise_rad={initialise_rad}
                             lightSource={selectedLightSource&&selectedLightSource.textContent}
+                            neumorphType={neumorphType}
+                            color={color}
                 ></NeomorphDiv>
                <div className={`${classes.LightSourceBottom} ${classes.LightSource}`}>
                  <LightSource dir={Directions.bottomLeft} selected={selectedLightSource} changeLightSource={setSelectedLightsource}  />
@@ -79,6 +92,7 @@ import classes from './App.module.css';
                </div> 
              </div>
              <div className={classes.flexContainer__rightContainer}>
+               <NeuomorphType setNeumorphType={setNeumorphType}/>
                <Control size={state.size}
                         rad={state.rad}
                         height={state.height}
@@ -93,6 +107,7 @@ import classes from './App.module.css';
                            boxShadowColor1={state.boxShadowColor1}
                            boxShadowColor2={state.boxShadowColor2}
                />
+               <ChromePicker color={color} opacity={true} onChange={(color,e)=>setColor(color.hex)}/>
              </div>
            </div>
          </main>
