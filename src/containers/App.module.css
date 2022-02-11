@@ -8,6 +8,7 @@
   width:100vw;
   height: 100vh;
   background-color: #ECF0F3; 
+  position: relative;
 }
 
 .App__main{
@@ -28,4 +29,10 @@
 .LightSource{
   display: flex;
   justify-content: space-between;
+}
+
+.ShowColor{
+  cursor: pointer;
+  font-size: 2rem;
+  padding:1rem;
 }
