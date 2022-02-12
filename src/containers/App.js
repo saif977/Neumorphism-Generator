@@ -17,6 +17,8 @@ import NeuomorphType from "../components/NeumorphType/NeuomorphType";
 import Color from "../components/Color/Color";
 
 function App() {
+
+ 
   const [state, setState] = useState({
     size: 10,
     rad: 2,

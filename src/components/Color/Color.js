@@ -9,7 +9,7 @@ function Color({ color, setColor, setShowColor }) {
         <ChromePicker
           color={color}
           opacity={true}
-          onChange={(color, e) => setColor(color.hex)}
+          onChange={(color, e) => {setColor(color.hex);} }
         />
       </div>
       <div
