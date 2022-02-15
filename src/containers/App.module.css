@@ -11,9 +11,6 @@
   position: relative;
 }
 
-.App__main{
-  height:50rem;
-}
 
 .flexContainer{
   height: 100%;
@@ -26,13 +23,30 @@
   height: 100%;
 }
 
+.flexContainer__rightContainer{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.RightSubContainer{
+  width:80%;
+  
+}
+
 .LightSource{
   display: flex;
   justify-content: space-between;
 }
 
 .ShowColor{
+  border:none;
+  outline: none;
   cursor: pointer;
   font-size: 2rem;
+  margin-bottom: 2rem;
   padding:1rem;
+  background-color: var(--color);
+  box-shadow: -2px -2px 8px var(--lightenColor), 2px 2px 8px var(--darkenColor);
 }

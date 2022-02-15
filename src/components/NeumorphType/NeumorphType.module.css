@@ -1,9 +1,29 @@
 .NeumorphTypeContainer{
     display: flex;
     font-size:3rem;
-    justify-content: space-evenly;
 }
 
-.NeumorphTypeContainer > *{ 
+.NeumorphTypeContainer > *{
+    position: relative;
+    text-align: center;
+    flex-grow: 1;
+    margin-right: 2rem; 
     cursor: pointer;
+    padding:1rem;
+    border-radius:5px;
+    box-shadow: -2px -2px 8px var(--lightenColor), 2px 2px 8px var(--darkenColor);
+}
+
+.NeumorphTypeSelected{
+    box-shadow: inset -2px -2px 4px var(--lightenColor),inset 2px 2px 4px var(--darkenColor);
+}
+
+.NeumorphTypeSelected::after{
+    content: "";
+    position: absolute;
+    left: 10%;
+    bottom: 0;
+    width: 80%;
+    height:.2rem;
+    background-color: black;
 }

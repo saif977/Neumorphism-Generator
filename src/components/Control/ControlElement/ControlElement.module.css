@@ -40,7 +40,7 @@ input[type='range']::-moz-range-thumb{
 }
 
 .inp{
-    width: 300px;
+    width: 100%;
     height: 30px;
     padding: 15px;
     background:   var(--color); 

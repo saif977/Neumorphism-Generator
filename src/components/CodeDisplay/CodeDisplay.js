@@ -23,11 +23,11 @@ const CodeDisplay=(props)=>{
             <div >
                 <pre>
                     <code>
-                       <span>width: {props.size*10}px;</span>
-                       <span>height: {props.size*10}px;</span>
-                       <span>border-radius: {props.rad*10}px;</span>
-                       <span>box-shadow: {props.boxShadowX}px {props.boxShadowY}px {props.boxShadowBlur}px {props.boxShadowColor1},</span>
-                       <span>            {-props.boxShadowX}px {-props.boxShadowY}px {props.boxShadowBlur}px {props.boxShadowColor2};</span>
+                       <span><span className={classes.CssProperty}>width: </span><span className={classes.CssValue}>{props.size*10}px;</span></span>
+                       <span><span className={classes.CssProperty}>height: </span><span className={classes.CssValue}>{props.size*10}px;</span></span>
+                       <span><span className={classes.CssProperty}>border-radius: </span><span className={classes.CssValue}>{props.rad*10}px;</span></span>
+                       <span><span className={classes.CssProperty}>box-shadow: </span><span className={classes.CssValue}>{props.boxShadowX}px {props.boxShadowY}px {props.boxShadowBlur}px {props.boxShadowColor1},</span></span>
+                       <span> <span className={classes.CssProperty}></span><span className={classes.CssValue}>           {-props.boxShadowX}px {-props.boxShadowY}px {props.boxShadowBlur}px {props.boxShadowColor2};</span></span>
                     </code>
                 </pre>
             </div>

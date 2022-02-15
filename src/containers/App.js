@@ -17,12 +17,9 @@ import NeuomorphType from "../components/NeumorphType/NeuomorphType";
 import Color from "../components/Color/Color";
 
 function App() {
-
- 
   const [state, setState] = useState({
-    size: 10,
+    size: 25,
     rad: 2,
-    height: 1.8,
   });
 
   const [selectedLightSource, setSelectedLightsource] = useState(null);
@@ -42,7 +39,7 @@ function App() {
   const initialise_rad = () => {
     //console.log("setting")
     setState((prevState, props) => {
-      return { ...prevState, height: 1.8, blur: 3 };
+      return { ...prevState, height: 0.45, blur: 0.75 };
     });
   };
 
@@ -60,86 +57,90 @@ function App() {
   };
 
   return (
-    <div
-      className={classes.App}
-      style={style}
-  
-    >
+    <div className={classes.App} style={style}>
       <Cockpit></Cockpit>
       <main className={classes.App__main}>
         <div
           className={`${classes.App__main__flexContainer} ${classes.flexContainer}`}
         >
           <div className={classes.flexContainer__leftContainer}>
-            <div className={`${classes.LightSourceTop} ${classes.LightSource}`}>
-              <LightSource
-                dir={Directions.topLeft}
-                selected={selectedLightSource}
-                changeLightSource={setSelectedLightsource}
-              />
-              <LightSource
-                dir={Directions.topRight}
-                selected={selectedLightSource}
-                changeLightSource={setSelectedLightsource}
-              />
-            </div>
-            <NeomorphDiv
-              size={state.size}
-              rad={state.rad}
-              height={state.height}
-              blur={state.blur}
-              initialise_rad={initialise_rad}
-              lightSource={
-                selectedLightSource && selectedLightSource.textContent
-              }
-              neumorphType={neumorphType}
-              color={color}
-            ></NeomorphDiv>
-            <div
-              className={`${classes.LightSourceBottom} ${classes.LightSource}`}
-            >
-              <LightSource
-                dir={Directions.bottomLeft}
-                selected={selectedLightSource}
-                changeLightSource={setSelectedLightsource}
-              />
-              <LightSource
-                dir={Directions.bottomRight}
-                selected={selectedLightSource}
-                changeLightSource={setSelectedLightsource}
-              />
+            <div className={classes.LeftSubContainer}>
+              <div
+                className={`${classes.LightSourceTop} ${classes.LightSource}`}
+              >
+                <LightSource
+                  dir={Directions.topLeft}
+                  selected={selectedLightSource}
+                  changeLightSource={setSelectedLightsource}
+                />
+                <LightSource
+                  dir={Directions.topRight}
+                  selected={selectedLightSource}
+                  changeLightSource={setSelectedLightsource}
+                />
+              </div>
+              <NeomorphDiv
+                size={state.size}
+                rad={state.rad}
+                height={state.height}
+                blur={state.blur}
+                initialise_rad={initialise_rad}
+                lightSource={
+                  selectedLightSource && selectedLightSource.textContent
+                }
+                neumorphType={neumorphType}
+                color={color}
+              ></NeomorphDiv>
+              <div
+                className={`${classes.LightSourceBottom} ${classes.LightSource}`}
+              >
+                <LightSource
+                  dir={Directions.bottomLeft}
+                  selected={selectedLightSource}
+                  changeLightSource={setSelectedLightsource}
+                />
+                <LightSource
+                  dir={Directions.bottomRight}
+                  selected={selectedLightSource}
+                  changeLightSource={setSelectedLightsource}
+                />
+              </div>
             </div>
           </div>
           <div className={classes.flexContainer__rightContainer}>
-            <NeuomorphType setNeumorphType={setNeumorphType} />
-            <button
+            <div className={classes.RightSubContainer}>
+              <button
                 className={classes.ShowColor}
                 onClick={() => setShowColor(!showColor)}
               >
                 select color
               </button>
-            {showColor ? (
-              <Color color={color} setColor={setColor} setShowColor={setShowColor} />
-            ) : (
-            null
-            )}
+              <NeuomorphType neumorphType={neumorphType} setNeumorphType={setNeumorphType} />
+              {showColor ? (
+                <Color
+                  color={color}
+                  setColor={setColor}
+                  setShowColor={setShowColor}
+                />
+              ) : null}
 
-            <Control
-              size={state.size}
-              rad={state.rad}
-              height={state.height}
-              blur={state.blur}
-              change={changeHandler}
-            ></Control>
-            <CodeDisplay
-              size={state.size}
-              rad={state.rad}
-              boxShadowX={state.height}
-              boxShadowY={state.height}
-              boxShadowBlur={state.blur}
-              boxShadowColor1={state.boxShadowColor1}
-              boxShadowColor2={state.boxShadowColor2}
-            />
+              <Control
+                size={state.size}
+                rad={state.rad}
+                height={state.height}
+                blur={state.blur}
+                change={changeHandler}
+              ></Control>
+              <CodeDisplay
+                size={state.size}
+                rad={state.rad}
+                boxShadowX={state.height}
+                boxShadowY={state.height}
+                boxShadowBlur={state.blur}
+                boxShadowColor1={state.boxShadowColor1}
+                boxShadowColor2={state.boxShadowColor2}
+              />
+            </div>
           </div>
         </div>
       </main>
