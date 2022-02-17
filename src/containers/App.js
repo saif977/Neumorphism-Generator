@@ -79,6 +79,8 @@ function App() {
                   changeLightSource={setSelectedLightsource}
                 />
               </div>
+              <div className={classes.NeumorphContainer}>
+
               <NeomorphDiv
                 size={state.size}
                 rad={state.rad}
@@ -91,6 +93,7 @@ function App() {
                 neumorphType={neumorphType}
                 color={color}
               ></NeomorphDiv>
+              </div>
               <div
                 className={`${classes.LightSourceBottom} ${classes.LightSource}`}
               >
