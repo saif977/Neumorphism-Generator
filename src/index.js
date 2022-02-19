@@ -6,9 +6,9 @@ import reportWebVitals from './reportWebVitals';
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faCheckSquare, faCoffee, faClipboard} from '@fortawesome/free-solid-svg-icons'
+import { faCheckSquare, faCoffee, faClipboard, faLightbulb} from '@fortawesome/free-solid-svg-icons'
 
-library.add(fab, faCheckSquare, faCoffee ,faClipboard);
+library.add(fab, faCheckSquare, faCoffee ,faClipboard,faLightbulb);
 
 ReactDOM.render(
   <React.StrictMode>

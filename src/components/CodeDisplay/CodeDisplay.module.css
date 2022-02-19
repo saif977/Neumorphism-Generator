@@ -6,11 +6,10 @@
 .codeDisplay_container {
   color: black;
   font-size: 7rem;
-  width: 30rem;
+  width: 50rem;
   padding: 1rem;
   border-radius: 0.5rem;
   background-color:#282828;
-  
 }
 
 span {

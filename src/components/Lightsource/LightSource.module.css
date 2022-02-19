@@ -1,7 +1,15 @@
-.LightSourceContainer{
-    font-size: 2rem;
+.LightSourceContainer {
+    
+  font-size: 2rem;
+  background-color: blue;
+  /* border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: var(--color);
+  box-shadow: -2px -2px 8px var(--lightenColor), 2px 2px 8px var(--darkenColor); */
 }
 
-.Selected{
-    border:1px solid black;
+.Selected {
+  border: 1px solid black;
 }
+

@@ -1,69 +1,78 @@
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-.App{
-  background-color: #ECF0F3; 
-  height:100vh;
+.App {
+  background-color: #ecf0f3;
+  height: 100vh;
   position: relative;
 }
 
-.flexContainer{
-  width:100%;
+.flexContainer {
+  width: 100%;
   display: flex;
   flex-flow: row nowrap;
 }
 
-.flexContainer__leftContainer , .flexContainer__rightContainer{
- 
+.flexContainer__leftContainer,
+.flexContainer__rightContainer {
   flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.LeftSubContainer{
+.LeftSubContainer {
   padding: 1rem 2rem;
-  width:400px;
-  height:450px;
+  width: 400px;
+  height: 450px;
   display: flex;
   flex-flow: column nowrap;
 }
 
-.LightSourceTop{
+.LightSourceTop {
   /* flex-grow: 1; */
-  height:5%;
+  height: 5%;
 }
 
-.NeumorphContainer{
-display: flex;
-justify-content: center;
-align-items: center;
-height:90%;
+.NeumorphContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
 }
 
-.LightSourceBottom{
-  height:5%;
+.LightSourceBottom {
+  height: 5%;
 }
 
-.RightSubContainer{
-  width:80%;  
+.RightSubContainer {
+  width: 80%;
 }
 
-.LightSource{
+.LightSource {
   display: flex;
   justify-content: space-between;
 }
 
-.ShowColor{
-  border:none;
+.ShowColor {
+  border: none;
   outline: none;
   cursor: pointer;
   font-size: 2rem;
   margin-bottom: 2rem;
-  padding:1rem;
+  padding: 1rem;
   background-color: var(--color);
   box-shadow: -2px -2px 8px var(--lightenColor), 2px 2px 8px var(--darkenColor);
+}
+
+.topLeft{
+  background-color: brown;
+  padding:1rem;
+  padding-top:1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

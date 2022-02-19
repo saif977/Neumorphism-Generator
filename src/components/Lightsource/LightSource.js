@@ -1,33 +1,40 @@
-import React,{ useEffect, useLayoutEffect, useRef } from 'react';
-import classes from "./LightSource.module.css"
+import React, { useEffect, useLayoutEffect, useRef } from "react";
+import classes from "./LightSource.module.css";
 
-import {Directions} from "../Direction";
+import { Directions } from "../Direction";
 
-function LightSource({dir,selected,changeLightSource}) {
-  const lightSource=useRef(null);
- 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-  useEffect(()=>{
-      if(lightSource&&lightSource.current&&dir===Directions.topLeft)
-      {
-          changeLightSource(lightSource.current);
-          console.log(lightSource.current)
-          lightSource.current.className=`${classes.Selected} ${classes.LightSourceContainer}`;
-      }
-      console.log(lightSource.current)
-  },[])
+function LightSource({ dir, selected, changeLightSource }) {
+  const lightSource = useRef(null);
 
-  useLayoutEffect(()=>{
-      if(selected!==null &&  selected===lightSource.current)
-      lightSource.current.className=`${classes.Selected} ${classes.LightSourceContainer}`;
-      else if(lightSource.current!==null)
-      lightSource.current.className=`${classes.LightSourceContainer}`
-  })
+  useEffect(() => {
+    if (lightSource && lightSource.current && dir === Directions.topLeft) {
+      changeLightSource(lightSource.current);
+      console.log(lightSource.current);
+      lightSource.current.className = `${classes.Selected} ${classes.LightSourceContainer}`;
+    }
+    console.log(lightSource.current);
+  }, []);
 
-  return <>
-  <div ref={lightSource} onClick={(e)=>{ changeLightSource(e.target)}} >
-      {dir}
-  </div></>
+  useLayoutEffect(() => {
+    if (selected !== null && selected === lightSource.current)
+      lightSource.current.className = `${classes.Selected} ${classes.LightSourceContainer}`;
+    else if (lightSource.current !== null)
+      lightSource.current.className = `${classes.LightSourceContainer}`;
+  });
+
+  return (
+    <>
+      <div  
+          ref={lightSource}
+          onClick={(e) => {
+            changeLightSource(e.target);
+          }} >
+       {dir}
+      </div>
+    </>
+  );
 }
 
 export default LightSource;

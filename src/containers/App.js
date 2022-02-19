@@ -20,12 +20,24 @@ function App() {
   const [state, setState] = useState({
     size: 25,
     rad: 2,
+    height: 0.45,
+    blur: 0.75,
   });
 
   const [selectedLightSource, setSelectedLightsource] = useState(null);
   const [neumorphType, setNeumorphType] = useState(type.flat);
   const [color, setColor] = useState("#ECF0F3");
+  const [neumorphBackground, setNeumorphBackground] = useState(color);
   const [showColor, setShowColor] = useState(false);
+  const [whiteVerticalShadow, setWhiteVerticalShadow] = useState(state.height);
+  const [whiteHorizontalShadow, setWhiteHorizontalShadow] = useState(
+    state.height
+  );
+  const [blackVerticalShadow, setBlackVerticalShadow] = useState(state.height);
+  const [blackHorizontalShadow, setBlackHorizontalShadow] = useState(
+    state.height
+  );
+  const [inset, setInset] = useState(false);
 
   const changeHandler = (e, changeFor) => {
     // console.log(e);
@@ -68,11 +80,14 @@ function App() {
               <div
                 className={`${classes.LightSourceTop} ${classes.LightSource}`}
               >
+                <div className={classes.topLeft}>
                 <LightSource
                   dir={Directions.topLeft}
                   selected={selectedLightSource}
                   changeLightSource={setSelectedLightsource}
                 />
+                </div>
+
                 <LightSource
                   dir={Directions.topRight}
                   selected={selectedLightSource}
@@ -80,19 +95,30 @@ function App() {
                 />
               </div>
               <div className={classes.NeumorphContainer}>
-
-              <NeomorphDiv
-                size={state.size}
-                rad={state.rad}
-                height={state.height}
-                blur={state.blur}
-                initialise_rad={initialise_rad}
-                lightSource={
-                  selectedLightSource && selectedLightSource.textContent
-                }
-                neumorphType={neumorphType}
-                color={color}
-              ></NeomorphDiv>
+                <NeomorphDiv
+                  size={state.size}
+                  rad={state.rad}
+                  height={state.height}
+                  blur={state.blur}
+                  initialise_rad={initialise_rad}
+                  lightSource={
+                    selectedLightSource && selectedLightSource.textContent
+                  }
+                  neumorphType={neumorphType}
+                  color={color}
+                  neumorphBackground={neumorphBackground}
+                  setNeumorphBackground={setNeumorphBackground}
+                  whiteHorizontalShadow={whiteHorizontalShadow}
+                  setWhiteHorizontalShadow={setWhiteHorizontalShadow}
+                  whiteVerticalShadow={whiteVerticalShadow}
+                  setWhiteVerticalShadow={setWhiteVerticalShadow}
+                  blackHorizontalShadow={blackHorizontalShadow}
+                  setBlackHorizontalShadow={setBlackHorizontalShadow}
+                  blackVerticalShadow={blackVerticalShadow}
+                  setBlackVerticalShadow={setBlackVerticalShadow}
+                  inset={inset}
+                  setInset={setInset}
+                ></NeomorphDiv>
               </div>
               <div
                 className={`${classes.LightSourceBottom} ${classes.LightSource}`}
@@ -102,6 +128,7 @@ function App() {
                   selected={selectedLightSource}
                   changeLightSource={setSelectedLightsource}
                 />
+
                 <LightSource
                   dir={Directions.bottomRight}
                   selected={selectedLightSource}
@@ -118,7 +145,10 @@ function App() {
               >
                 select color
               </button>
-              <NeuomorphType neumorphType={neumorphType} setNeumorphType={setNeumorphType} />
+              <NeuomorphType
+                neumorphType={neumorphType}
+                setNeumorphType={setNeumorphType}
+              />
               {showColor ? (
                 <Color
                   color={color}
@@ -142,6 +172,12 @@ function App() {
                 boxShadowBlur={state.blur}
                 boxShadowColor1={state.boxShadowColor1}
                 boxShadowColor2={state.boxShadowColor2}
+                neumorphBackground={neumorphBackground}
+                whiteHorizontalShadow={whiteHorizontalShadow}
+                whiteVerticalShadow={whiteVerticalShadow}
+                blackHorizontalShadow={blackHorizontalShadow}
+                blackVerticalShadow={blackVerticalShadow}
+                inset={inset}
               />
             </div>
           </div>

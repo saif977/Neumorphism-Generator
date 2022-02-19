@@ -8,7 +8,6 @@ const CodeDisplay=(props)=>{
 
     const div=useRef(null);
 
-    const bgColor=document.documentElement.style.getPropertyValue("--color");
     const bgLightColor=document.documentElement.style.getPropertyValue("--lightenColor");
     const bgDarkColor=document.documentElement.style.getPropertyValue("--darkenColor");
 
@@ -29,10 +28,10 @@ const CodeDisplay=(props)=>{
                     <code>
                        <span><span className={classes.CssProperty}>width: </span><span className={classes.CssValue}>{props.size*10}px;</span></span>
                        <span><span className={classes.CssProperty}>height: </span><span className={classes.CssValue}>{props.size*10}px;</span></span>
-                       <span><span className={classes.CssProperty}>background-color: </span><span className={classes.CssValue}>{bgColor};</span></span>
+                       <span><span className={classes.CssProperty}>background-color: </span><span className={classes.CssValue}>{props.neumorphBackground};</span></span>
                        <span><span className={classes.CssProperty}>border-radius: </span><span className={classes.CssValue}>{props.rad*10}px;</span></span>
-                       <span><span className={classes.CssProperty}>box-shadow: </span><span className={classes.CssValue}>{props.boxShadowX}px {props.boxShadowY}px {props.boxShadowBlur}px {props.boxShadowColor1} {bgLightColor},</span></span>
-                       <span> <span className={classes.CssProperty}></span><span className={classes.CssValue}>           {-props.boxShadowX}px {-props.boxShadowY}px {props.boxShadowBlur}px {props.boxShadowColor2} {bgDarkColor};</span></span>
+                       <span><span className={classes.CssProperty}>box-shadow: </span><span className={classes.CssValue}>{props.inset?"inset":null} {props.whiteVerticalShadow}px {props.whiteHorizontalShadow}px {props.boxShadowBlur}px {props.boxShadowColor1} {bgLightColor},</span></span>
+                       <span> <span className={classes.CssProperty}></span><span className={classes.CssValue}>           {props.inset?"inset":null} {props.blackVerticalShadow}px {props.blackHorizontalShadow}px {props.boxShadowBlur}px {props.boxShadowColor2} {bgDarkColor};</span></span>
                     </code>
                 </pre>
             </div>
