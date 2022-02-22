@@ -1,7 +1,7 @@
 import React, { useEffect, useLayoutEffect, useRef } from "react";
 import classes from "./LightSource.module.css";
 
-import { Directions } from "../Direction";
+import { Directions } from "../../Assets/Direction";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

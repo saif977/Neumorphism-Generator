@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import classes from "./NeumorphType.module.css"
 
-import {type} from "../Assets/Type"
+import {type} from "../../Assets/Type"
 
 function NeuomorphType({neumorphType,setNeumorphType}) {
 

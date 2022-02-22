@@ -2,13 +2,12 @@ import React, { useEffect, useState } from "react";
 import LightSource from "../Lightsource/LightSource";
 import { LightenDarkenColor } from "lighten-darken-color";
 import classes from "./NeumorphDiv.module.css";
-import { Directions } from "../Direction";
-import { type } from "../Assets/Type";
-import {useWindowSize} from '../hooks/useWindowSize'
+import { Directions } from "../../Assets/Direction";
+import { type } from "../../Assets/Type";
+import {useWindowSize} from '../../hooks/useWindowSize'
 
 const NeomorphDiv = (props) => {
 
-  console.log(useWindowSize());
 
   let whiteVerticalShadow = `${props.height}`;
   let whiteHorizontalShadow = `${props.height}`;
