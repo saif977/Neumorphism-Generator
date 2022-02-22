@@ -10,6 +10,7 @@ const Control=(props)=>{
     //     console.log(this);
     // }
 
+    
     return (
         <div className={classes.Control}>
             <ControlEl classFor="sizeControllerContainer"
@@ -17,8 +18,8 @@ const Control=(props)=>{
                        id="size"
                        type="range" 
                        min="10" 
-                       max="30" 
-                       step="1" 
+                       max={`${props. maxNeumorphDivSize}`} 
+                       step=".5" 
                        value={props.size}  
                        change={props.change}
                        />
@@ -29,7 +30,7 @@ const Control=(props)=>{
                        type="range" 
                        min="0" 
                        max={props.size/2} 
-                       step="1" 
+                       step=".5" 
                        value={props.rad} 
                        change={props.change}
                        />
@@ -41,7 +42,7 @@ const Control=(props)=>{
                        type="range" 
                        min="0" 
                        max="4" 
-                       step="0.01" 
+                       step="0.001" 
                        value={props.height} 
                        change={props.change}
                        />
@@ -52,7 +53,7 @@ const Control=(props)=>{
                        type="range" 
                        min="0" 
                        max={'10'} 
-                       step="0.001" 
+                       step="0.0001" 
                        value={props.blur} 
                        change={props.change}
                        />

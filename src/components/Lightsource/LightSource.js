@@ -30,8 +30,9 @@ function LightSource({ dir, selected, changeLightSource }) {
           ref={lightSource}
           onClick={(e) => {
             changeLightSource(e.target);
-          }} >
-       {dir}
+          }}
+          data-dir={`${dir}`}
+           >
       </div>
     </>
   );

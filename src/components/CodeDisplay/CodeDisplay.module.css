@@ -5,7 +5,6 @@
 }
 .codeDisplay_container {
   color: black;
-  font-size: 7rem;
   width: 50rem;
   padding: 1rem;
   border-radius: 0.5rem;
@@ -47,4 +46,21 @@ span::selection {
   font-size: 3rem;
   display: flex;
   justify-content: right;
+}
+
+
+@media only screen and (max-width:940px)
+{
+  .codeDisplay_container{
+    width:100%;
+  }
+  span{
+    font-size:1rem;
+  }
+}
+
+@media only screen and (max-width:310px) {
+  span{
+    font-size: .9rem;
+  }
 }

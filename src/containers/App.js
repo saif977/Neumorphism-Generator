@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // importing font aweosme -----------------------
 
@@ -11,18 +11,33 @@ import CodeDisplay from "../components/CodeDisplay/CodeDisplay";
 import LightSource from "../components/Lightsource/LightSource";
 import { Directions } from "../components/Direction";
 import { type } from "../components/Assets/Type";
-
+import { useWindowSize } from "../components/hooks/useWindowSize";
 import classes from "./App.module.css";
 import NeuomorphType from "../components/NeumorphType/NeuomorphType";
 import Color from "../components/Color/Color";
 
 function App() {
+  const {width}=useWindowSize();
+  const [maxNeumorphDivSize,setmaxNeumorphDivSize]=useState(width>700?28:16);
   const [state, setState] = useState({
-    size: 25,
+    size: `${maxNeumorphDivSize===28?25:12}`,
     rad: 2,
     height: 0.45,
     blur: 0.75,
   });
+
+  if(width<701&&maxNeumorphDivSize===28)
+  {
+    setmaxNeumorphDivSize(16);
+    setState((prevState) => ({
+      ...prevState,
+      'size': 14,
+    }));
+  }
+  else if(width>700&&maxNeumorphDivSize===16)
+  {
+    setmaxNeumorphDivSize(28);
+  }
 
   const [selectedLightSource, setSelectedLightsource] = useState(null);
   const [neumorphType, setNeumorphType] = useState(type.flat);
@@ -39,7 +54,12 @@ function App() {
   );
   const [inset, setInset] = useState(false);
 
-  const changeHandler = (e, changeFor) => {
+
+//  useEffect(()=>{
+//   setmaxNeumorphDivSize(document.documentElement.style.getPropertyValue("--width"));
+//  },[maxNeumorphDivSize])
+
+const changeHandler = (e, changeFor) => {
     // console.log(e);
     const value = e.target.value;
     setState((prevState) => ({
@@ -102,7 +122,7 @@ function App() {
                   blur={state.blur}
                   initialise_rad={initialise_rad}
                   lightSource={
-                    selectedLightSource && selectedLightSource.textContent
+                    selectedLightSource && selectedLightSource.dataset.dir
                   }
                   neumorphType={neumorphType}
                   color={color}
@@ -163,6 +183,8 @@ function App() {
                 height={state.height}
                 blur={state.blur}
                 change={changeHandler}
+                maxNeumorphDivSize={maxNeumorphDivSize}
+
               ></Control>
               <CodeDisplay
                 size={state.size}

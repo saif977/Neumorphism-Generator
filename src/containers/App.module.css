@@ -1,13 +1,26 @@
+:root{
+  --color:"#ECF0F3";
+  --lightenColor:rgb(255 255 255);
+  --darkenColor:rgb(211 215 218);
+}
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-size: 62.5%;
 }
 
 .App {
   background-color: #ecf0f3;
-  height: 100vh;
+  height:100%;
   position: relative;
+}
+
+.App__main{
+  display: flex;
+  height:80%;
+  flex-flow: row nowrap;
+  align-items: center;
 }
 
 .flexContainer {
@@ -18,34 +31,46 @@
 
 .flexContainer__leftContainer,
 .flexContainer__rightContainer {
-  flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.flexContainer__leftContainer{
+  padding-left:1rem;
+  width:40%;
+}
+
+.flexContainer__rightContainer{
+  width:60%;
 }
 
 .LeftSubContainer {
-  padding: 1rem 2rem;
-  width: 400px;
-  height: 450px;
-  display: flex;
-  flex-flow: column nowrap;
-}
-
-.LightSourceTop {
-  /* flex-grow: 1; */
-  height: 5%;
-}
-
-.NeumorphContainer {
+  width: 100%;
+  height: 100%;
+  /* background: rebeccapurple; */
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90%;
 }
 
+.LightSourceTop {
+  position: absolute;
+  width: calc(100%);
+  /* background-color: saddlebrown; */
+  padding: 0.5rem;
+  top: 0;
+}
+
+
+
 .LightSourceBottom {
-  height: 5%;
+  position: absolute;
+  width: calc(100%);
+  /* background-color: saddlebrown; */
+  padding: 0.5rem;
+  bottom: 0;
 }
 
 .RightSubContainer {
@@ -68,11 +93,51 @@
   box-shadow: -2px -2px 8px var(--lightenColor), 2px 2px 8px var(--darkenColor);
 }
 
-.topLeft{
-  background-color: brown;
-  padding:1rem;
-  padding-top:1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+
+@media only screen and (max-width:940px)
+{
+  *{
+    font-size:50%;
+  }
+}
+
+@media only screen and (max-width:700px){
+  .App__main{
+    height:90%;
+  }
+
+  .flexContainer{
+    flex-flow: column nowrap;
+    height:100%;
+    align-items: center;
+  }
+
+  .flexContainer__leftContainer{
+    width: 70%;
+    height: 100%;
+  }
+
+  .flexContainer__rightContainer{
+    width: 100%;
+    height:100%;
+  }
+
+  /* .LeftSubContainer{
+    height:15rem;
+  } */
+
+  .RightSubContainer{
+    width: 100%;
+  }
+
+  .ShowColor {
+    font-size: 1.5rem;
+    margin: 2rem 0rem;
+    margin-left: 2rem;
+    padding: .6rem;
+    background-color: var(--color);
+    box-shadow: -2px -2px 8px var(--lightenColor), 2px 2px 8px var(--darkenColor);
+  }
+  
 }

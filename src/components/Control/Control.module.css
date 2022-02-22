@@ -2,6 +2,8 @@
     font-size: 3rem;
 }
 
+@media only screen and (max-width:700px){
 .Control{
-  
+    padding: 0 2rem;  
+}
 }

@@ -1,15 +1,23 @@
 .LightSourceContainer {
-    
-  font-size: 2rem;
   background-color: blue;
-  /* border: none;
+  color:var(--color);
+  padding:3rem;
+  border-radius: 50%;
+  border: none;
   outline: none;
   cursor: pointer;
   background-color: var(--color);
-  box-shadow: -2px -2px 8px var(--lightenColor), 2px 2px 8px var(--darkenColor); */
+  box-shadow: -2px -2px 4px var(--lightenColor), 2px 2px 4px var(--darkenColor);
+
 }
 
 .Selected {
-  border: 1px solid black;
+  box-shadow:inset -2px -2px 4px var(--lightenColor),inset 2px 2px 4px var(--darkenColor);
+
 }
 
+@media only screen and (max-width:700px){
+  .LightSourceContainer{
+    padding: 2rem;
+  }
+}

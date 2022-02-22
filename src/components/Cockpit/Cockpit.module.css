@@ -26,4 +26,14 @@
     color: #655757;
 }
 
-
+@media only screen and (max-width:700px){
+    .cockpit__header__h1{
+        font-weight: 400;
+        font-size: 1.5rem;
+    }
+    
+    .cockpit__header__p{
+        font-weight: 200;
+        font-size: 2rem;
+    }
+  }
