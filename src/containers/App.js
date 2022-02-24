@@ -21,7 +21,7 @@ function App() {
   const [maxNeumorphDivSize,setmaxNeumorphDivSize]=useState(width>700?28:16);
   const [state, setState] = useState({
     size: `${maxNeumorphDivSize===28?25:12}`,
-    rad: 2,
+    radius: 2,
     height: 0.45,
     blur: 0.75,
   });
@@ -84,6 +84,12 @@ const changeHandler = (e, changeFor) => {
   //   return true;
   // }
 
+  const changeColor=(newColor)=>{
+    setColor(newColor);
+    console.log(getComputedStyle(document.documentElement).getPropertyValue('--bgColor') )
+    //document.documentElement.style.setProperty("color",newColor);
+  }
+
   const style = {
     backgroundColor: color,
   };
@@ -117,7 +123,7 @@ const changeHandler = (e, changeFor) => {
               <div className={classes.NeumorphContainer}>
                 <NeomorphDiv
                   size={state.size}
-                  rad={state.rad}
+                  radius={state.radius}
                   height={state.height}
                   blur={state.blur}
                   initialise_rad={initialise_rad}
@@ -159,12 +165,14 @@ const changeHandler = (e, changeFor) => {
           </div>
           <div className={classes.flexContainer__rightContainer}>
             <div className={classes.RightSubContainer}>
-              <button
+              <div className={classes.SelectColor}>
+                <span>select color: </span>
+                <button
                 className={classes.ShowColor}
                 onClick={() => setShowColor(!showColor)}
               >
-                select color
               </button>
+              </div>
               <NeuomorphType
                 neumorphType={neumorphType}
                 setNeumorphType={setNeumorphType}
@@ -172,14 +180,14 @@ const changeHandler = (e, changeFor) => {
               {showColor ? (
                 <Color
                   color={color}
-                  setColor={setColor}
+                  setColor={changeColor}
                   setShowColor={setShowColor}
                 />
               ) : null}
 
               <Control
                 size={state.size}
-                rad={state.rad}
+                radius={state.radius}
                 height={state.height}
                 blur={state.blur}
                 change={changeHandler}
@@ -188,7 +196,7 @@ const changeHandler = (e, changeFor) => {
               ></Control>
               <CodeDisplay
                 size={state.size}
-                rad={state.rad}
+                radius={state.radius}
                 boxShadowX={state.height}
                 boxShadowY={state.height}
                 boxShadowBlur={state.blur}

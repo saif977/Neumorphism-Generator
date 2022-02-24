@@ -1,17 +1,19 @@
+
 :root{
-  --color:"#ECF0F3";
   --lightenColor:rgb(255 255 255);
   --darkenColor:rgb(211 215 218);
 }
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-size: 62.5%;
+  color:black;
 }
 
 .App {
-  background-color: #ecf0f3;
+  background-color: $--bgColor;
   height:100%;
   position: relative;
 }
@@ -43,6 +45,7 @@
 
 .flexContainer__rightContainer{
   width:60%;
+  
 }
 
 .LeftSubContainer {
@@ -82,15 +85,28 @@
   justify-content: space-between;
 }
 
+.SelectColor{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.SelectColor > span{
+  margin-right: 2rem;
+  font-size: inherit;
+}
+
 .ShowColor {
-  border: none;
+  border: 2px solid black;
   outline: none;
   cursor: pointer;
   font-size: 2rem;
-  margin-bottom: 2rem;
-  padding: 1rem;
+  padding: 2rem 2rem;
   background-color: var(--color);
-  box-shadow: -2px -2px 8px var(--lightenColor), 2px 2px 8px var(--darkenColor);
 }
 
 
@@ -131,13 +147,13 @@
     width: 100%;
   }
 
-  .ShowColor {
+  .SelectColor{
     font-size: 1.5rem;
-    margin: 2rem 0rem;
     margin-left: 2rem;
-    padding: .6rem;
-    background-color: var(--color);
-    box-shadow: -2px -2px 8px var(--lightenColor), 2px 2px 8px var(--darkenColor);
+    margin-top: 2rem;
   }
-  
+
+  .ShowColor{
+    padding: 1.5rem 1.5rem;
+  }
 }

@@ -17,13 +17,13 @@
 .cockpit__header__h1{
     font-weight: 400;
     font-size: 2.5rem;
-    color: #464040;
+    /* color: #464040; */
 }
 
 .cockpit__header__p{
     font-weight: 200;
     font-size: 3rem;
-    color: #655757;
+    /* color: #655757; */
 }
 
 @media only screen and (max-width:700px){

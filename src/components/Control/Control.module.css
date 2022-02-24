@@ -1,5 +1,6 @@
 .Control > *{
     font-size: 3rem;
+    text-transform:capitalize;
 }
 
 @media only screen and (max-width:700px){

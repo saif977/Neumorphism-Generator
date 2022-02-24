@@ -25,13 +25,13 @@ const Control=(props)=>{
                        />
             
             <ControlEl classFor="radControllerContainer"
-                       for="rad"
-                       id="rad"
+                       for="radius"
+                       id="radius"
                        type="range" 
                        min="0" 
                        max={props.size/2} 
                        step=".5" 
-                       value={props.rad} 
+                       value={props.radius} 
                        change={props.change}
                        />
                       
@@ -48,7 +48,7 @@ const Control=(props)=>{
                        />
             
             <ControlEl classFor="blurControllerContainer"
-                       for="blue"
+                       for="blur"
                        id="blur" 
                        type="range" 
                        min="0" 

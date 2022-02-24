@@ -102,7 +102,7 @@ const NeomorphDiv = (props) => {
     background: `${props.neumorphBackground}`,
     width: `${props.size}rem`,
     height: `${props.size}rem`,
-    borderRadius: `${props.rad}rem`,
+    borderRadius: `${props.radius}rem`,
     boxShadow: `${props.inset ? "inset" : ""} ${props.whiteVerticalShadow}rem ${
       props.whiteHorizontalShadow
     }rem ${props.blur}rem ${lightenColor}, 

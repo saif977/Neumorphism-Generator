@@ -12,6 +12,27 @@
     padding:1rem;
     border-radius:5px;
     box-shadow: -2px -2px 8px var(--lightenColor), 2px 2px 8px var(--darkenColor);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: inherit;
+}
+
+.unicodeFlat{
+    transform: rotate(90deg);
+}
+
+.unicodeConcave{
+    transform: rotate(-90deg);
+}
+
+.unicodeConvex{
+    transform: rotate(90deg);
+}
+
+
+.unicodeInset{
+    transform: rotate(-90deg);
 }
 
 .NeumorphTypeSelected{
@@ -27,6 +48,8 @@
     height:.2rem;
     background-color: black;
 }
+
+
 
 @media only screen and (max-width:700px)
 {
