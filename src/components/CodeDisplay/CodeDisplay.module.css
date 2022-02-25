@@ -3,12 +3,15 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+
+
 .codeDisplay_container {
-  color: black;
   width: 50rem;
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 0.5rem;
   background-color:#282828;
+  display: flex;
 }
 
 span {
@@ -34,6 +37,18 @@ span::selection {
   text-decoration: none;
 }
 
+.Code{
+  width:90%;
+}
+.clipContainer{
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10%;
+  background-color: rgb(136, 135, 135);
+}
+
 .clipBoard {
   padding: 0.2rem;
 }
@@ -44,16 +59,18 @@ span::selection {
 
 .clipContainer {
   font-size: 3rem;
-  display: flex;
-  justify-content: right;
 }
 
+.Copied{
+  background-color: var(--darkenColor);
+}
 
 @media only screen and (max-width:940px)
 {
   .codeDisplay_container{
     width:100%;
   }
+
   span{
     font-size:1rem;
   }

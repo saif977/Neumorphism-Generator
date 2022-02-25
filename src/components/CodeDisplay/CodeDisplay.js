@@ -7,6 +7,7 @@ import classes from "./CodeDisplay.module.css"
 const CodeDisplay=(props)=>{
 
     const div=useRef(null);
+    const svgEl=useRef(null);
 
     const bgLightColor=document.documentElement.style.getPropertyValue("--lightenColor");
     const bgDarkColor=document.documentElement.style.getPropertyValue("--darkenColor");
@@ -20,10 +21,20 @@ const CodeDisplay=(props)=>{
         select.addRange(range);
         document.execCommand("copy");
     }
+
+    const clicked=()=>{
+        svgEl.current.className=`${classes.clipContainer} ${classes.Copied}`;
+        copyHandler();
+        setTimeout(()=>{
+            svgEl.current.className=`${classes.clipContainer}`;
+        },800)
+    }
+
+
     
     return(
         <div ref={div} className={classes.codeDisplay_container}>
-            <div >
+            <div className={classes.Code}>
                 <pre>
                     <code>
                        <span><span className={classes.CssProperty}>width: </span><span className={classes.CssValue}>{props.size*10}px;</span></span>
@@ -35,8 +46,8 @@ const CodeDisplay=(props)=>{
                     </code>
                 </pre>
             </div>
-            <div className={classes.clipContainer}>
-                <FontAwesomeIcon icon="clipboard" className={classes.clipBoard} onClick={copyHandler}/>
+            <div ref={svgEl}  className={classes.clipContainer}  onClick={()=>{clicked()}} >
+                <FontAwesomeIcon icon="clipboard" className={classes.clipBoard} />
             </div>
         </div>
     )

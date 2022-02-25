@@ -1,7 +1,9 @@
 
 :root{
+  --color:white;
   --lightenColor:rgb(255 255 255);
   --darkenColor:rgb(211 215 218);
+  --darkenThumbColor:white;
 }
 
 * {
@@ -10,10 +12,12 @@
   box-sizing: border-box;
   font-size: 62.5%;
   color:black;
+
+  -webkit-tap-highlight-color: transparent;
 }
 
 .App {
-  background-color: $--bgColor;
+  background-color: var(--color);
   height:100%;
   position: relative;
 }
@@ -102,11 +106,12 @@
 
 .ShowColor {
   border: 2px solid black;
+  border-radius: 5px;
   outline: none;
   cursor: pointer;
   font-size: 2rem;
   padding: 2rem 2rem;
-  background-color: var(--color);
+  background: linear-gradient(to right bottom, #DD2476,#FF512F,#ac2fff);
 }
 
 

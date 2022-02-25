@@ -16,6 +16,7 @@ const NeomorphDiv = (props) => {
 
   const lightenColor = `${LightenDarkenColor(props.color, 20)}`;
   const darkenColor = `${LightenDarkenColor(props.color, -25)}`;
+  const darkenThumbColor=`${LightenDarkenColor(props.color,-7)}`;
 
   document.documentElement.style.setProperty("--color", `${props.color}`);
   document.documentElement.style.setProperty(
@@ -23,7 +24,7 @@ const NeomorphDiv = (props) => {
     `${lightenColor}`
   );
   document.documentElement.style.setProperty("--darkenColor", `${darkenColor}`);
-
+  document.documentElement.style.setProperty("--darkenThumbColor",`${darkenThumbColor}`)
   console.log(props.neumorphType);
 
   useEffect(() => {
