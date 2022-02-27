@@ -43,6 +43,10 @@ input[type='range']::-moz-range-thumb{
     margin-left: 2rem;
 }
 
+.inp:hover{
+    cursor: pointer;
+}
+
 .inp::-webkit-slider-runnable-track{
     display: flex;
     align-items: center;
